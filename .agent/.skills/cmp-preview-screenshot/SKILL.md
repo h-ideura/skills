@@ -1,11 +1,16 @@
 ---
 name: cmp-preview-screenshot
-description: Compose Multiplatform (CMP) の commonMain にあるプレビューのスクリーンショットを取得するためのワークフローを提供します。一時的にプレビュー関数を androidMain に移動してレンダリングし、完了後に元に戻す手順を自動化・支援します。
+description: Compose Multiplatform (CMP) の commonMain にあるプレビューのスクリーンショットを取得するためのワークフローを提供します（Android Studio の Agent Chat 上での利用を想定）。一時的にプレビュー関数を androidMain に移動してレンダリングし、完了後に元に戻す手順を自動化・支援します。
 ---
 
 # CMP Preview Screenshot Skill
 
 このスキルは、Compose Multiplatform プロジェクトにおいて、`commonMain` に定義されたプレビューをレンダリングしてスクリーンショット（`render_compose_preview`）を取得するための手順をガイドします。
+
+## 想定利用環境
+
+- **Android Studio の Agent Chat** での利用を前提としています。`render_compose_preview` や `gradle_sync` など、手順で参照するツールは Android Studio のエージェント機能が提供するものとして説明しています。
+- Cursor など別のエージェント環境では、同等のツール名・挙動がない場合があります。その場合は手順の意図（一時的な `androidMain` への配置と同期後のレンダリング）に沿って、利用可能な手段に置き換えてください。
 
 ## 背景
 現在、`commonMain` にある `@Preview` は、`render_compose_preview` ツールが `androidMain` (Android ターゲット) でのレンダリングを想定しているなどの理由で、直接レンダリングできない場合があります。そのため、一時的に `androidMain` に移動してレンダリングを行う必要があります。

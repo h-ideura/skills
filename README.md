@@ -10,7 +10,7 @@
 
 | 名前 | 説明 |
 |------|------|
-| [cmp-preview-screenshot](.agent/.skills/cmp-preview-screenshot/SKILL.md) | commonMainのコンポーネントのスクリーンショット取得までのワークフローを支援します。androidMainでしか撮れないため、一時的に移動して取得する手法を記述しています |
+| [cmp-preview-screenshot](.agent/.skills/cmp-preview-screenshot/SKILL.md) | **Android Studio の Agent Chat** を想定。`commonMain` のプレビューをスクリーンショット化する手順を支援します。`render_compose_preview` が `androidMain` 前提のため、一時的に移動して取得する手法を記述しています |
 
 ## 今後
 
